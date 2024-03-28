@@ -15,13 +15,6 @@ a UI with flutter that manages different SDKs download,update and more
 
 SDK Mananger , is a software with a graphical user interface built using flutter and MongoDB as database.
 
-* SDK Manager shall download a SDK from a list of SDKs
-* SDK Manager shall update already isntalled SDKs on your system
-* SDK Manager shall remove SDK from your system if wanted
-* The SDK shall list all the current SDKs on your system.
-* TBD 
-
-
 ## Prerequisites
 
 ## Software
