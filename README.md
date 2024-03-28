@@ -1,10 +1,13 @@
 # SDK_Manager
 
+
+<p align ="center">
 <img src="./Documents/images/Logo.png" alt="drawing" width="300">
+</p>
 
 -------------------------------
 
-a UI with flutter that manages different SDKs download,update and more
+**A UI with flutter that manages different SDKs download,update and more**
 
 ## Index 
 - [SDK\_Manager](#sdk_manager)
