@@ -7,7 +7,7 @@
 
 -------------------------------
 
-**A UI with Avalonia that manages different SDKs download,update and more**
+**A UI with JavaFx that manages different SDKs download,update and more**
 
 ## Index 
 - [SDK\_Manager](#sdk_manager)
@@ -21,7 +21,7 @@
 
 ## Intro
 
-SDK Mananger , is a software with a graphical user interface built using Avalonia and MongoDB as database.
+SDK Mananger , is a software with a graphical user interface built using JavaJX and MongoDB as database.
 
 ## Prerequisites
 
