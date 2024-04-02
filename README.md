@@ -21,9 +21,17 @@
 
 ## Intro
 
-SDK Mananger , is a software with a graphical user interface built using JavaJX and MongoDB as database.
+SDK Mananger , is a software with a graphical user interface built using JavaJX and Firebase as database.
 
 ## Prerequisites
+
+| Name | version | note|
+|------|------|------| 
+| Ubunutu | 22.04 LTS | n/a|
+|JDK | 21 |n/a|
+|JavaFX|21 or 22 | n/a|
+|Gradle | 8.5 | n/a|
+
 
 ## Software
 
