@@ -12,10 +12,26 @@ public class FirebaseConnection {
     //#region fields
     private FirebaseApp sdkManagerApp;
     private FirebaseDatabase sdkManagerdb ;
+    private static FirebaseConnection single_connection = null ;
     //#endregion
-    public FirebaseConnection() throws IOException{
-        FirebaseInit();
-        System.out.println(sdkManagerApp.getName());
+    private FirebaseConnection(){
+        try{
+            FirebaseInit();
+            System.out.println(sdkManagerApp.getName());
+        }catch(IOException ex)
+        {
+            ex.printStackTrace();
+        }
+
+    }
+
+    public static synchronized FirebaseConnection getInstance()
+    {
+        if(single_connection == null)
+            {
+                single_connection = new FirebaseConnection();
+            }
+            return single_connection;
     }
 
     //#region private methods

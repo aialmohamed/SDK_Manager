@@ -32,6 +32,9 @@ SDK Mananger , is a software with a graphical user interface built using JavaJX 
 |JavaFX|21 or 22 | n/a|
 |Gradle | 8.5 | n/a|
 
+Also go to your .Bashrc and add :
+
+        export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/service-account-file.json"
 
 ## Software
 
