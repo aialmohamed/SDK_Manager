@@ -44,4 +44,4 @@ Also go to your .Bashrc and add :
 
 1. [Sketching](/Documents/Sketching.md)
 2. [Requirements](/Documents/Requirements.md)
-3. [Design]
+3. [Design](/Documents/Design.md)
