@@ -1,0 +1,27 @@
+@startuml "FirebaseSDKManager"
+
+
+class "FirebaseConnection" as class1 {
+
+- sdkManagerApp : FirebaseApp
+- single_connection:FirebaseConnection
+
+- FirebaseConnection()
+- FirebaseInit() : void
++ getSdkManagerApp() : FirebaseApp
++ setSdkManagerApp(sdkManagerApp:FirebaseApp): void
++ getInstance() : FirebaseConnection
+}
+
+class "FirebaseRepository" as class2 {
+    - mAuth : FirebaseAuth
+    - mDatabase : FirebaseDatabase
+    - mReference : DatabaseReference
+
+    + FirebaseRepistory()
+}
+
+class2-->"- mConnection \n 1"class1
+class1 --> class1
+
+@enduml 

@@ -1,19 +1,16 @@
-package software.Repository;
+package software.utils;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.UserRecord;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import software.utils.FirebaseConnection;
 
 public class FirebaseRepistory {
 
     // creating a repository to controll our database
     
     //#region fields
-    FirebaseAuth myAuth;
-    FirebaseDatabase myDatabase;
-    DatabaseReference myReference;
+    FirebaseAuth mAuth;
+    FirebaseDatabase mDatabase;
+    DatabaseReference mReference;
     FirebaseConnection mConnection;
     //#endregion
     
@@ -21,9 +18,9 @@ public class FirebaseRepistory {
     public FirebaseRepistory()
     {
         mConnection = FirebaseConnection.getInstance();
-        FirebaseAuth  myAuth = FirebaseAuth.getInstance(mConnection.getSdkManagerApp());
-        FirebaseDatabase myDatabase = FirebaseDatabase.getInstance(mConnection.getSdkManagerApp());
-        DatabaseReference myReference = myDatabase.getReference();
+        FirebaseAuth  mAuth = FirebaseAuth.getInstance(mConnection.getSdkManagerApp());
+        FirebaseDatabase mDatabase = FirebaseDatabase.getInstance(mConnection.getSdkManagerApp());
+        DatabaseReference mReference = mDatabase.getReference();
         
     }
 
