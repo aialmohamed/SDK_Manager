@@ -5,13 +5,11 @@ import java.io.IOException;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseConnection {
 
     //#region fields
     private FirebaseApp sdkManagerApp;
-    private FirebaseDatabase sdkManagerdb ;
     private static FirebaseConnection single_connection = null ;
     //#endregion
     private FirebaseConnection(){
