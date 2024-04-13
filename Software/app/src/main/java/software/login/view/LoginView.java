@@ -3,6 +3,7 @@ package software.login.view;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import software.login.viewmodel.LoginViewModel;
 
 public class LoginView {
     
@@ -20,7 +21,10 @@ public class LoginView {
 
     @FXML
     void initialize(){
-        
+        LoginViewModel loginViewModel = new LoginViewModel();
+        EmailTextField.textProperty().bindBidirectional(loginViewModel.userEmailProperty());
+        PasswordTextfield.textProperty().bindBidirectional(loginViewModel.userPasswordProperty());
+        LoginButton.disableProperty().bind(loginViewModel.isLoginPosiableProperty().not());
     }
 
 }
