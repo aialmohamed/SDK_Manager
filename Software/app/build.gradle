@@ -20,5 +20,6 @@ application
 
 dependencies
 {
-    implementation 'com.google.firebase:firebase-admin:9.2.0'
+    implementation 'org.mongodb:mongodb-driver-sync:4.3.4'
+    implementation 'org.mongodb:mongodb-driver-async:3.12.14'
 }
