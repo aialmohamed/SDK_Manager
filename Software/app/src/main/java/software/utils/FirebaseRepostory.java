@@ -66,7 +66,6 @@ public class FirebaseRepostory {
     }
     public boolean IsCurrentUserAuth(String Email)
     {
-        this.mAuth.verifyIdToken()
         try {
             // Asynchronously fetch user by email
             ApiFuture<UserRecord> userFuture = this.mAuth.getUserByEmailAsync(Email);

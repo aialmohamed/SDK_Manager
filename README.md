@@ -36,11 +36,14 @@ Also go to your .Bashrc and add :
 
         export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/service-account-file.json"
 
+>[!Note]
+> Firebase is not supported enough for this project , rolling back to the drawing board.
+
 ## Software
 
 ## Testing
 
-## links 
+## links
 
 1. [Sketching](/Documents/Sketching.md)
 2. [Requirements](/Documents/Requirements.md)
