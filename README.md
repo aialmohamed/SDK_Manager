@@ -21,7 +21,7 @@
 
 ## Intro
 
-SDK Mananger , is a software with a graphical user interface built using JavaJX and Firebase as database.
+SDK Mananger , is a software with a graphical user interface built using JavaJX and MongoDB as database.
 
 ## Prerequisites
 
@@ -31,10 +31,6 @@ SDK Mananger , is a software with a graphical user interface built using JavaJX 
 |JDK | 21 |n/a|
 |JavaFX|21 or 22 | n/a|
 |Gradle | 8.5 | n/a|
-
-Also go to your .Bashrc and add :
-
-        export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/service-account-file.json"
 
 >[!Note]
 > Firebase is not supported enough for this project , rolling back to the drawing board.

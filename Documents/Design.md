@@ -3,12 +3,11 @@
 ## Index 
 - [System Design](#system-design)
   - [Index](#index)
-  - [Firebase](#firebase)
+  - [MongoDB](#mongodb)
   - [Login](#login)
 
-## Firebase
+## MongoDB
 
-![Firebae](/Documents/images/FirebaseInit.png)
 
 ## Login 
 
