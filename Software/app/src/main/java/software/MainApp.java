@@ -1,20 +1,12 @@
 package software;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import software.utils.FirebaseConnection;
 
 public class MainApp extends Application {
 
-
-    FirebaseConnection mConnection;
-
-private Parent createContent() {
-        return new StackPane(new Text("hello World"));
-    }
     
     public MainApp() {
 
@@ -23,9 +15,14 @@ private Parent createContent() {
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(createContent(), 300, 300));
-        stage.show();
+
+        FXMLLoader loader =new FXMLLoader();
         
+        loader.setLocation(getClass().getClassLoader().getResource("fxml/Login.fxml"));
+        Parent login  = loader.load();
+        Scene scene = new Scene(login);
+        stage.setScene(scene);
+        stage.show();
     }
 
 

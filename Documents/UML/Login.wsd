@@ -1,27 +1,28 @@
-@startuml "FirebaseSDKManager"
+@startuml "Login"
 
+class "LoginView" <<View>>{
+    - mLoginViewModel : LoginViewModel
+    + start(Stage) : void
+}
+class "LoginViewModel" <<ViewModel>>{
 
-class "FirebaseConnection" as class1 {
-
-- sdkManagerApp : FirebaseApp
-- single_connection:FirebaseConnection
-
-- FirebaseConnection()
-- FirebaseInit() : void
-+ getSdkManagerApp() : FirebaseApp
-+ setSdkManagerApp(sdkManagerApp:FirebaseApp): void
-+ getInstance() : FirebaseConnection
 }
 
-class "FirebaseRepository" as class2 {
-    - mAuth : FirebaseAuth
-    - mDatabase : FirebaseDatabase
-    - mReference : DatabaseReference
+class UserModel <<Model>> {
+    - userId : String
+    - userName : String
+    - userEmail : String
+    - userPassword : String
 
-    + FirebaseRepistory()
+    + getUserId() : String
+    + setUserID(userId:String):void
+    + getUserName() :String
+    + setUserName(userName:String): void
+    + getuserEmail(): String
+    + setuserEmail(userEmail:String): void
+    + getuserPassword():void
+    + setuserPassword(userPassword:String) : void
 }
 
-class2-->"- mConnection \n 1"class1
-class1 --> class1
 
-@enduml 
+@enduml

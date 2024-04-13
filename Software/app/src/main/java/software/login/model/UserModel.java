@@ -1,21 +1,21 @@
-package software.Login.model;
+package software.login.model;
 
 public class UserModel {
 
     private String userId ;
     private String userName ;
-    private String email;
-    private String password;
+    private String userEmail;
+    private String userPassword;
     
     public UserModel() {
     
     }
 
-    public UserModel(String userId, String userName, String email, String password) {
+    public UserModel(String userId, String userName, String userEmail, String userPassword) {
         this.userId = userId;
         this.userName = userName;
-        this.email = email;
-        this.password = password;
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
     }
 
     public String getUserId() {
@@ -42,20 +42,20 @@ public class UserModel {
         this.userName = userName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getuserEmail() {
+        return userEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setuserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
-    public String getPassword() {
-        return password;
+    public String getuserPassword() {
+        return userPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setuserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
     
 }
