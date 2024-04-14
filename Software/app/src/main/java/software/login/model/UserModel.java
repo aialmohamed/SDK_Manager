@@ -2,7 +2,6 @@ package software.login.model;
 
 public class UserModel {
 
-    private String userId ;
     private String userName ;
     private String userEmail;
     private String userPassword;
@@ -12,7 +11,6 @@ public class UserModel {
     }
 
     public UserModel(String userId, String userName, String userEmail, String userPassword) {
-        this.userId = userId;
         this.userName = userName;
         this.userEmail = userEmail;
         this.userPassword = userPassword;
@@ -25,24 +23,6 @@ public class UserModel {
         this.userPassword = userPassword;
     }
     
-
-    public String getUserId() {
-        return userId;
-    }
-
-
-
-    public void setUserId(String userId) {
-        if(userId == null)
-        {
-            this.userId = "";
-        }
-        else
-        {
-            this.userId = userId;
-        }
-        
-    }
 
     public String getUserName() {
         return userName;

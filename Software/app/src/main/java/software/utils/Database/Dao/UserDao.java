@@ -8,6 +8,7 @@ import org.bson.types.ObjectId;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.InsertOneResult;
 
 public class UserDao implements IDao<UserModel>{
 
@@ -32,11 +33,9 @@ public class UserDao implements IDao<UserModel>{
         .append("userEmail", item.getuserEmail())
         .append("userPassword", item.getuserPassword());
         return CompletableFuture.runAsync(() -> {
-            collection.insertOne(doc);
-            String id = doc.getObjectId("_id").toString();
-            item.setUserId(id);
-            doc.append("userId", id);
-            collection.replaceOne(Filters.eq("_id", doc.getObjectId("_id")), doc);
+            InsertOneResult result = collection.insertOne(doc);
+            ObjectId id = result.getInsertedId().asObjectId().getValue();
+            doc.append("_id", id);
         });
     }
 
@@ -45,7 +44,7 @@ public class UserDao implements IDao<UserModel>{
     @Override
     public CompletableFuture<Void> delete(String id) {
         return CompletableFuture.runAsync(() -> {
-            Document document = new Document("userId", id);
+            Document document = new Document("_id", new ObjectId(id));
             collection.deleteOne(document);
         });
     }
@@ -53,21 +52,21 @@ public class UserDao implements IDao<UserModel>{
     @Override
     public CompletableFuture<UserModel> read(String id) {
         return CompletableFuture.supplyAsync(() -> {
-            Document document = collection.find(new Document("userId", id)).first();
+            Document document = collection.find(new Document("_id", new ObjectId(id))).first();
             if (document == null) {
                 return null;
             }
-            return new UserModel(document.getString("userId"), document.getString("userName"), document.getString("userEmail"), document.getString("userPassword"));
+            return new UserModel(document.getString("userName"), document.getString("userEmail"), document.getString("userPassword"));
         });
     }
 
     @Override
     public CompletableFuture<Void> update(String id, UserModel item) {
-        Document doc = new Document("userId", item.getUserId())
+        Document doc = new Document("_id", new ObjectId())
                 .append("userName", item.getUserName())
                 .append("userEmail", item.getuserEmail())
                 .append("userPassword", item.getuserPassword());
-        return CompletableFuture.runAsync(() -> collection.replaceOne(Filters.eq("userId", id), doc));
+                return CompletableFuture.runAsync(() -> collection.replaceOne(Filters.eq("_id", new ObjectId(id)), doc));
     }
     
 }
