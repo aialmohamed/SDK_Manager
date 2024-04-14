@@ -43,6 +43,11 @@ public class MongoDBConnectionAsync {
     public void setMongoClient(MongoClient mongoClient) {
         MongoDBConnectionAsync.mongoClient = mongoClient;
     }
+    public void close() {
+        if (mongoClient != null) {
+            mongoClient.close();
+        }
+    }
 
     // for testing purposes
     public static void resetInstance() {

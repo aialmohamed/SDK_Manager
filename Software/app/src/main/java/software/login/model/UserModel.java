@@ -17,10 +17,20 @@ public class UserModel {
         this.userEmail = userEmail;
         this.userPassword = userPassword;
     }
+    
+    // for testing purposes
+    public UserModel(String userName, String userEmail, String userPassword) {
+        this.userName = userName;
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
+    }
+    
 
     public String getUserId() {
         return userId;
     }
+
+
 
     public void setUserId(String userId) {
         if(userId == null)

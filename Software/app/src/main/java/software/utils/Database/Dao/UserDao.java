@@ -3,6 +3,7 @@ package software.utils.Database.Dao;
 import java.util.concurrent.CompletableFuture;
 import software.login.model.UserModel;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -18,6 +19,12 @@ public class UserDao implements IDao<UserModel>{
         this.collection = database.getCollection(collectionName);
     }
 
+    // for test purposes
+
+    public UserDao(MongoCollection<Document> collection) {
+        this.collection = collection;
+    }
+
     @Override
     public CompletableFuture<Void> create(UserModel item) {
         
@@ -28,10 +35,12 @@ public class UserDao implements IDao<UserModel>{
             collection.insertOne(doc);
             String id = doc.getObjectId("_id").toString();
             item.setUserId(id);
-            Document updatedDoc = new Document("$set", new Document("userId", id));
-            collection.updateOne(Filters.eq("_id", doc.getObjectId("_id")), updatedDoc);
+            doc.append("userId", id);
+            collection.replaceOne(Filters.eq("_id", doc.getObjectId("_id")), doc);
         });
     }
+
+
 
     @Override
     public CompletableFuture<Void> delete(String id) {
