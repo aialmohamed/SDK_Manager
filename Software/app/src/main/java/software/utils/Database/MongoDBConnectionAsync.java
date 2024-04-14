@@ -2,8 +2,6 @@ package software.utils.Database;
 
 import java.util.concurrent.CompletableFuture;
 
-import org.bson.Document;
-
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
@@ -18,7 +16,7 @@ public class MongoDBConnectionAsync {
      private static final String DEFAULT_DATABASE_NAME = "sdkManagerDB";
      private static MongoClient mongoClient;
  
-     // singleton :
+     // singleton : 
      private static MongoDBConnectionAsync mongoDBConnectionAsyncInstance = null;
  
      private MongoDBConnectionAsync() {
@@ -42,4 +40,12 @@ public class MongoDBConnectionAsync {
              return mongoClient.getDatabase(databaseName);
          });
      }
+    public void setMongoClient(MongoClient mongoClient) {
+        MongoDBConnectionAsync.mongoClient = mongoClient;
+    }
+
+    // for testing purposes
+    public static void resetInstance() {
+        mongoDBConnectionAsyncInstance = null;
+    }
 }
