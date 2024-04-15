@@ -8,7 +8,6 @@ import org.bson.types.ObjectId;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
-import com.mongodb.client.result.InsertOneResult;
 
 public class UserDao implements IDao<UserModel>{
 
@@ -33,9 +32,7 @@ public class UserDao implements IDao<UserModel>{
         .append("userEmail", item.getuserEmail())
         .append("userPassword", item.getuserPassword());
         return CompletableFuture.runAsync(() -> {
-            InsertOneResult result = collection.insertOne(doc);
-            ObjectId id = result.getInsertedId().asObjectId().getValue();
-            doc.append("_id", id);
+            collection.insertOne(doc);
         });
     }
 
@@ -62,8 +59,7 @@ public class UserDao implements IDao<UserModel>{
 
     @Override
     public CompletableFuture<Void> update(String id, UserModel item) {
-        Document doc = new Document("_id", new ObjectId())
-                .append("userName", item.getUserName())
+        Document doc = new Document("userName", item.getUserName())
                 .append("userEmail", item.getuserEmail())
                 .append("userPassword", item.getuserPassword());
                 return CompletableFuture.runAsync(() -> collection.replaceOne(Filters.eq("_id", new ObjectId(id)), doc));

@@ -43,10 +43,12 @@ public class MongoDBConnectionAsync {
     public void setMongoClient(MongoClient mongoClient) {
         MongoDBConnectionAsync.mongoClient = mongoClient;
     }
-    public void close() {
-        if (mongoClient != null) {
-            mongoClient.close();
-        }
+    public CompletableFuture<Void> close() {
+        return CompletableFuture.runAsync(() -> {
+            if (mongoClient != null) {
+                mongoClient.close();
+            }
+        });
     }
 
     // for testing purposes

@@ -1,33 +1,17 @@
 package software;
-import java.util.concurrent.ExecutionException;
-
-import com.mongodb.client.MongoDatabase;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import software.login.model.UserModel;
-import software.utils.Database.MongoDBConnectionAsync;
-import software.utils.Database.Dao.UserDao;
+
 
 public class MainApp extends Application {
+
 
     
     public MainApp() {
 
-/*             try {
-                MongoDBConnectionAsync mConnection = MongoDBConnectionAsync.getInstance();
-                MongoDatabase mDatabase = mConnection.connectAndGetDatabaseAsync().get();
-                UserDao userDataAccess = new UserDao(mDatabase, "users");
-                UserModel dummyUser = new UserModel("dummyUser", "dummyEmail@example.com", "dummyPassword");
-                userDataAccess.create(dummyUser);
-                //mConnection.close();
-                
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
-            } */
 
         }
 
@@ -44,7 +28,4 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
-
-    
 }
