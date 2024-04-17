@@ -1,4 +1,5 @@
 package software.login.viewmodel;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 import com.mongodb.client.MongoDatabase;
@@ -15,23 +16,17 @@ public class LoginViewModel {
     private final StringProperty userEmail = new SimpleStringProperty();
     private final StringProperty userPassword = new SimpleStringProperty();
     private final ReadOnlyBooleanWrapper loginPosiable = new ReadOnlyBooleanWrapper();
+    
     private  MongoDBConnectionAsync mConnection;
+    private UserDao mUserDao;
+    private MongoDatabase mDatabase;
     
     // Firebase connection
-    public LoginViewModel() {
-        try {
-            mConnection = MongoDBConnectionAsync.getInstance();
-            MongoDatabase mDatabase = mConnection.connectAndGetDatabaseAsync().get();
-            UserDao userDataAccess = new UserDao(mDatabase, "users");
-            UserModel dummyUser = new UserModel("dummyUser2", "dummyEmail@example.com", "dummyPassword");
-            userDataAccess.create(dummyUser).get();
-            mConnection.close().get();
-            
-            
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
+    public LoginViewModel() 
+    {
 
+        CreateMongoConnection();
+        mUserDao = new UserDao(mDatabase,"users");
         loginPosiable.bind(userEmail.isNotEmpty().and(userPassword.isNotEmpty()));
 
     }
@@ -49,6 +44,43 @@ public class LoginViewModel {
         return loginPosiable.getReadOnlyProperty();
     }
 
+    private void CreateMongoConnection()
+    {
+        try {
+            mConnection = MongoDBConnectionAsync.getInstance();
+            mDatabase = mConnection.connectAndGetDatabaseAsync().get();
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    // this shall read the binding values and authenticate the user from the database
+    public void AuthenticateUser() throws InterruptedException, ExecutionException
+    {
+        // Search the user in database : 
+        CompletableFuture<UserModel> userFuture = mUserDao.findUserByEmail(userEmail.getValue());
+        UserModel user = userFuture.get();
+        if(user != null)
+        {
+            System.out.println("User Found " + user.getUserName() + " " + user.getuserEmail() + " " + user.getuserPassword());
+        }
+        else
+        {
+            System.out.println("User Not Found");
+        }
+    }
+
+
+
+    private void  CloseMongoConnection()
+    {
+        try {
+            mConnection.close().get();
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
     
 
 

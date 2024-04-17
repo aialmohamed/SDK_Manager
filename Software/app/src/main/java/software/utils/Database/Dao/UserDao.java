@@ -64,5 +64,29 @@ public class UserDao implements IDao<UserModel>{
                 .append("userPassword", item.getuserPassword());
                 return CompletableFuture.runAsync(() -> collection.replaceOne(Filters.eq("_id", new ObjectId(id)), doc));
     }
+
+    // TODO : Test those methods
+    
+    // we also need a method to find a user _Id a user by name
+    public CompletableFuture<UserModel> findUserByName(String name) {
+        return CompletableFuture.supplyAsync(() -> {
+            Document document = collection.find(new Document("userName", name)).first();
+            if (document == null) {
+                return null;
+            }
+            return new UserModel(document.getString("userName"), document.getString("userEmail"), document.getString("userPassword"));
+        });
+    }
+    // find user by email
+    public CompletableFuture<UserModel> findUserByEmail(String email) {
+        return CompletableFuture.supplyAsync(() -> {
+            Document document = collection.find(new Document("userEmail", email)).first();
+            if (document == null) {
+                return null;
+            }
+            return new UserModel(document.getString("userName"), document.getString("userEmail"), document.getString("userPassword"));
+        });
+    }
+    
     
 }

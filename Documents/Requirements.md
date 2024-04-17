@@ -66,3 +66,23 @@
 5. **Kubernetes SDK**: Libraries and tools for interacting with Kubernetes clusters.
 
 ## System Reqierments
+
+1. User Shall be able to log in and out from the SDK Manager
+
+
+
+- [x] Create a User model
+- [x] Create a Login View 
+- [x] Create a Login Viewmodel
+- [x] Create a connection to MongoDB
+- [x] Create a User DAO 
+- [ ] Create a Register View
+- [ ] Create a Register Viewmodel
+
+| Task | Status | Note| Test| Imporvemetns|
+|------|-----------|-----------|------| ----- |
+| Creaet a User Model | :ballot_box_with_check:| - | :ballot_box_with_check:| add a hash password ?|
+
+
+
+
