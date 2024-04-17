@@ -74,6 +74,8 @@
 - [x] Create a User model
 - [x] Create a Login View 
 - [x] Create a Login Viewmodel
+- [ ] Make password like a dot
+- [ ] Login should be able with username
 - [x] Create a connection to MongoDB
 - [x] Create a User DAO 
 - [ ] Create a Register View

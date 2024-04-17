@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import software.login.viewmodel.LoginViewModel;
@@ -18,10 +19,10 @@ import javafx.scene.Node;
 public class LoginView {
     
     @FXML
-    private TextField EmailTextField;
+    private TextField UserNameTextField;
     
     @FXML
-    private TextField PasswordTextfield;
+    private PasswordField PasswordTextField;
     
     @FXML
     private Button LoginButton;
@@ -32,8 +33,8 @@ public class LoginView {
     @FXML
     void initialize(){
         LoginViewModel loginViewModel = new LoginViewModel();
-        EmailTextField.textProperty().bindBidirectional(loginViewModel.userEmailProperty());
-        PasswordTextfield.textProperty().bindBidirectional(loginViewModel.userPasswordProperty());
+        UserNameTextField.textProperty().bindBidirectional(loginViewModel.userNameProperty());
+        PasswordTextField.textProperty().bindBidirectional(loginViewModel.userPasswordProperty());
         LoginButton.disableProperty().bind(loginViewModel.isLoginPosiableProperty().not());
 
         LoginButton.setOnAction(new EventHandler<ActionEvent>() {

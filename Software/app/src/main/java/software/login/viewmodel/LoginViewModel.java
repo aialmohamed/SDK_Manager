@@ -13,7 +13,7 @@ import software.utils.Database.MongoDBConnectionAsync;
 import software.utils.Database.Dao.UserDao;
 
 public class LoginViewModel {
-    private final StringProperty userEmail = new SimpleStringProperty();
+    private final StringProperty userName = new SimpleStringProperty();
     private final StringProperty userPassword = new SimpleStringProperty();
     private final ReadOnlyBooleanWrapper loginPosiable = new ReadOnlyBooleanWrapper();
     
@@ -27,13 +27,13 @@ public class LoginViewModel {
 
         CreateMongoConnection();
         mUserDao = new UserDao(mDatabase,"users");
-        loginPosiable.bind(userEmail.isNotEmpty().and(userPassword.isNotEmpty()));
+        loginPosiable.bind(userName.isNotEmpty().and(userPassword.isNotEmpty()));
 
     }
 
-    public StringProperty userEmailProperty()
+    public StringProperty userNameProperty()
     {
-        return userEmail;
+        return userName;
     }
     public StringProperty userPasswordProperty()
     {
@@ -59,7 +59,7 @@ public class LoginViewModel {
     public void AuthenticateUser() throws InterruptedException, ExecutionException
     {
         // Search the user in database : 
-        CompletableFuture<UserModel> userFuture = mUserDao.findUserByEmail(userEmail.getValue());
+        CompletableFuture<UserModel> userFuture = mUserDao.findUserByName(userName.getValue());
         UserModel user = userFuture.get();
         if(user != null)
         {

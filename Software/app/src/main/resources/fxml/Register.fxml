@@ -9,12 +9,12 @@
    <children>
       <AnchorPane layoutX="157.0" layoutY="25.0" prefHeight="350.0" prefWidth="307.0" style="-fx-background-color: #374f5f; -fx-background-radius: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="25.0">
          <children>
-            <Button fx:id="RegisterCMDButton" layoutX="22.0" layoutY="265.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="256.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #445f63; -fx-background-radius: 25;" text="Register" />
-            <TextField fx:id="usernameRegister" layoutX="22.0" layoutY="95.0" prefHeight="24.0" prefWidth="256.0" promptText="Username" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 25;" />
-            <TextField fx:id="EmailRegister" layoutX="22.0" layoutY="134.0" prefHeight="24.0" prefWidth="256.0" promptText="Email" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 25;" />
-            <TextField fx:id="PasswordRegister" layoutX="22.0" layoutY="169.0" prefHeight="24.0" prefWidth="256.0" promptText="Password" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 25;" />
-            <Label fx:id="Status" layoutX="22.0" layoutY="233.0" text="Label" />
-            <Button fx:id="CancelButton" layoutX="22.0" layoutY="304.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="256.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #445f63; -fx-background-radius: 25;" text="Cancel" />
+            <Button fx:id="RegisterCMDButton" layoutX="22.0" layoutY="265.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="256.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #445f63; -fx-background-radius: 25;" text="Register" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="265.0" />
+            <TextField fx:id="usernameRegister" layoutX="22.0" layoutY="81.0" prefHeight="24.0" prefWidth="256.0" promptText="Username" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 25;" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="81.0" />
+            <TextField fx:id="EmailRegister" layoutX="22.0" layoutY="134.0" prefHeight="24.0" prefWidth="256.0" promptText="Email" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 25;" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="134.0" />
+            <TextField fx:id="PasswordRegister" layoutX="22.0" layoutY="187.0" prefHeight="24.0" prefWidth="256.0" promptText="Password" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 25;" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="181.0" />
+            <Label fx:id="Status" layoutX="22.0" layoutY="233.0" text="Label" AnchorPane.topAnchor="233.0" />
+            <Button fx:id="CancelButton" layoutX="22.0" layoutY="302.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="256.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #445f63; -fx-background-radius: 25;" text="Cancel" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="300.0" />
          </children>
       </AnchorPane>
    </children>
