@@ -6,19 +6,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
+
 public class MainApp extends Application {
 
 
     
+
+        
     public MainApp() {
-
-
-        }
+    }
 
     @Override
     public void start(Stage stage) throws Exception {
-
-
 
         FXMLLoader loader =new FXMLLoader();
         

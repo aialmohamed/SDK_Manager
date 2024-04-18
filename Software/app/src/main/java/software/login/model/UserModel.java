@@ -29,7 +29,14 @@ public class UserModel {
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        if(userName == null)
+        {
+            this.userName = "";
+        }
+        else
+        {
+            this.userName = userName;
+        }
     }
 
     public String getuserEmail() {
@@ -37,7 +44,15 @@ public class UserModel {
     }
 
     public void setuserEmail(String userEmail) {
-        this.userEmail = userEmail;
+        if(userEmail == null)
+        {
+            this.userEmail = "";
+        }
+        else
+        {
+            this.userEmail = userEmail;
+        
+        }
     }
 
     public String getuserPassword() {
@@ -45,7 +60,14 @@ public class UserModel {
     }
 
     public void setuserPassword(String userPassword) {
-        this.userPassword = userPassword;
+        if(userPassword == null)
+        {
+            this.userPassword = "";
+        }
+        else
+        {
+            this.userPassword = userPassword;
+        }
     }
     
 }

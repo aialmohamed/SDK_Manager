@@ -74,16 +74,18 @@
 - [x] Create a User model
 - [x] Create a Login View 
 - [x] Create a Login Viewmodel
-- [ ] Make password like a dot
-- [ ] Login should be able with username
+- [x] Make password like a dot
+- [x] Login should be able with username
 - [x] Create a connection to MongoDB
 - [x] Create a User DAO 
-- [ ] Create a Register View
-- [ ] Create a Register Viewmodel
+- [x] Create a Register View
+- [x] Create a Register Viewmodel
+- [ ] Create a User Session 
+- [ ] Create DI functionalty for the UserSession
 
-| Task | Status | Note| Test| Imporvemetns|
+| Task | Status | Note| Test| Improvements|
 |------|-----------|-----------|------| ----- |
-| Creaet a User Model | :ballot_box_with_check:| - | :ballot_box_with_check:| add a hash password ?|
+|Create a connection | :ballot_box_with_check:| - | :ballot_box_with_check:| |
 
 
 

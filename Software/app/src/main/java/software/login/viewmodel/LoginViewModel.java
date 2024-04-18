@@ -2,6 +2,7 @@ package software.login.viewmodel;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+import com.google.inject.Inject;
 import com.mongodb.client.MongoDatabase;
 
 import javafx.beans.property.ReadOnlyBooleanProperty;
@@ -11,6 +12,8 @@ import javafx.beans.property.StringProperty;
 import software.login.model.UserModel;
 import software.utils.Database.MongoDBConnectionAsync;
 import software.utils.Database.Dao.UserDao;
+import software.utils.Sessions.UserSession;
+
 
 public class LoginViewModel {
     private final StringProperty userName = new SimpleStringProperty();
@@ -20,11 +23,11 @@ public class LoginViewModel {
     private  MongoDBConnectionAsync mConnection;
     private UserDao mUserDao;
     private MongoDatabase mDatabase;
-    
-    // Firebase connection
-    public LoginViewModel() 
+    private UserSession mUserSession;
+    @Inject
+    public LoginViewModel(UserSession userSession) 
     {
-
+        this.mUserSession = userSession;
         CreateMongoConnection();
         mUserDao = new UserDao(mDatabase,"users");
         loginPosiable.bind(userName.isNotEmpty().and(userPassword.isNotEmpty()));
@@ -63,10 +66,12 @@ public class LoginViewModel {
         UserModel user = userFuture.get();
         if(user != null)
         {
+            this.mUserSession.loginUser(user);
             System.out.println("User Found " + user.getUserName() + " " + user.getuserEmail() + " " + user.getuserPassword());
         }
         else
         {
+            this.mUserSession.deleteInstance();
             System.out.println("User Not Found");
         }
     }

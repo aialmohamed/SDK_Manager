@@ -68,7 +68,12 @@ public class RegisterViewModel {
         currentUser.setuserPassword(userPassword.get());
         currentUser.setUserName(userName.get());
         
-        
+         
+        if( currentUser.getuserEmail().isBlank() || currentUser.getuserPassword().isEmpty() || currentUser.getUserName().isEmpty())
+        {
+            registerStatus.setValue("Please Fill all the fields");
+            return;
+        }
         try {
             registerStatus.setValue("Registering User ...");
             mUserDao.create(currentUser).get();

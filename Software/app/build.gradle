@@ -23,6 +23,11 @@ dependencies
     implementation 'org.mongodb:mongodb-driver-sync:4.3.4'
     implementation 'org.mongodb:mongodb-driver-async:3.12.14'
     implementation 'org.mindrot:jbcrypt:0.4'
+    // https://mvnrepository.com/artifact/com.google.inject/guice
+    implementation 'com.google.inject:guice:7.0.0'
+
+
+
 
     // JUnit 4 for writing and running tests
     testImplementation 'junit:junit:4.13.2'

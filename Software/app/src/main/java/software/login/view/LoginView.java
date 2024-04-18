@@ -14,6 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import software.login.viewmodel.LoginViewModel;
+import software.utils.Sessions.UserSession;
 import javafx.scene.Node;
 
 public class LoginView {
@@ -32,7 +33,10 @@ public class LoginView {
 
     @FXML
     void initialize(){
-        LoginViewModel loginViewModel = new LoginViewModel();
+        //  Create User Session
+        UserSession userSession = UserSession.getInstance();
+
+        LoginViewModel loginViewModel = new LoginViewModel(userSession);
         UserNameTextField.textProperty().bindBidirectional(loginViewModel.userNameProperty());
         PasswordTextField.textProperty().bindBidirectional(loginViewModel.userPasswordProperty());
         LoginButton.disableProperty().bind(loginViewModel.isLoginPosiableProperty().not());
