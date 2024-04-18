@@ -78,8 +78,6 @@ public class LoginView {
             Scene registerScene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(registerScene);
-            // TODO : Remove this please after creating the Show SDK
-            userSession.logoutUser();
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

@@ -3,7 +3,6 @@ package databasetests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.lenient;
-import static org.mockito.Mockito.when;
 
 import java.util.concurrent.CompletableFuture;
 

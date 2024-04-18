@@ -2,7 +2,6 @@ package software.login.viewmodel;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-import com.google.inject.Inject;
 import com.mongodb.client.MongoDatabase;
 
 import javafx.beans.property.ReadOnlyBooleanProperty;
