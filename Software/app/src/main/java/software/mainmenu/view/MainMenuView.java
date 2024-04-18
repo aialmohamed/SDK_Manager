@@ -47,7 +47,7 @@ public class MainMenuView {
 
         UserSession userSession = UserSession.getInstance();
         String username = userSession.getCurrentUser().getUserName();
-
+        
         LogoutButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -56,7 +56,6 @@ public class MainMenuView {
                 System.out.println(username+ " " +"Logged Out");
             }
         });
-
     }
 
     void switchToLoginMenu(ActionEvent event) {

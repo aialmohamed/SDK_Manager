@@ -90,7 +90,8 @@
 
 ### 2. The SDK shall list all the installable SDKs.
 
-- [ ] Create a MainMenu View 
+- [x] Create a MainMenu View
+- [x] Create a logout functionality on MainMenu
 - [ ] Create a ShowSdk View
 - [ ] Create a UserSdk Model
 - [ ] Create a new DAO for SDK
