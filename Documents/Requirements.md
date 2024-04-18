@@ -80,8 +80,8 @@
 - [x] Create a User DAO 
 - [x] Create a Register View
 - [x] Create a Register Viewmodel
-- [ ] Create a User Session 
-- [ ] Create DI functionalty for the UserSession
+- [x] Create a User Session 
+- [x] Create DI functionalty for the UserSession
 
 | Task | Status | Note| Test| Improvements|
 |------|-----------|-----------|------| ----- |

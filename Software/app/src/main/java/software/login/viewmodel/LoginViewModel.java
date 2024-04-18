@@ -75,9 +75,6 @@ public class LoginViewModel {
             System.out.println("User Not Found");
         }
     }
-
-
-
     private void  CloseMongoConnection()
     {
         try {

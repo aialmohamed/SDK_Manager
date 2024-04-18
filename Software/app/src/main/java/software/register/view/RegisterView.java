@@ -13,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import software.register.viewmodel.RegisterViewModel;
-import software.utils.Sessions.UserSession;
 import javafx.scene.Node;
 public class RegisterView {
 
