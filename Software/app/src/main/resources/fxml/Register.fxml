@@ -5,9 +5,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1c5e8d;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="software.register.view.RegisterView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #1c5e8d;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="software.register.view.RegisterView">
    <children>
-      <AnchorPane layoutX="157.0" layoutY="25.0" prefHeight="350.0" prefWidth="307.0" style="-fx-background-color: #374f5f; -fx-background-radius: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="25.0">
+      <AnchorPane layoutX="246.0" layoutY="25.0" prefHeight="400.0" prefWidth="309.0" style="-fx-background-color: #374f5f; -fx-background-radius: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="245.0" AnchorPane.topAnchor="25.0">
          <children>
             <Button fx:id="RegisterCMDButton" layoutX="22.0" layoutY="265.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="256.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #445f63; -fx-background-radius: 25;" text="Register" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="265.0" />
             <TextField fx:id="usernameRegister" layoutX="22.0" layoutY="81.0" prefHeight="24.0" prefWidth="256.0" promptText="Username" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 25;" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="81.0" />
