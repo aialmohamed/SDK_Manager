@@ -18,13 +18,13 @@ import software.utils.Sessions.UserSession;
 import javafx.scene.Node;
 
 public class LoginView {
-    
+
     @FXML
     private TextField UserNameTextField;
-    
+
     @FXML
     private PasswordField PasswordTextField;
-    
+
     @FXML
     private Button LoginButton;
 
@@ -32,10 +32,11 @@ public class LoginView {
     private Button RegisterButton;
 
     @FXML
-    void initialize(){
-        //  Create User Session
+    void initialize() {
+        // Create User Session
         UserSession userSession = UserSession.getInstance();
 
+        // Create DataBinding to LoginViewModel
         LoginViewModel loginViewModel = new LoginViewModel(userSession);
         UserNameTextField.textProperty().bindBidirectional(loginViewModel.userNameProperty());
         PasswordTextField.textProperty().bindBidirectional(loginViewModel.userPasswordProperty());
@@ -45,7 +46,16 @@ public class LoginView {
             @Override
             public void handle(ActionEvent event) {
                 try {
+                    // Authenticate User
                     loginViewModel.AuthenticateUser();
+                    boolean isAuthenticated = userSession.isAuthenticated();
+                    //  Switch to Main Menu
+                    if (isAuthenticated) {
+                        switchToMainMenu(event, userSession);
+                    } else {
+                        System.out.println("User Not Found");
+                    }
+
                 } catch (InterruptedException | ExecutionException e) {
                     e.printStackTrace();
                 }
@@ -55,20 +65,39 @@ public class LoginView {
         RegisterButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                // switch to register view
-                try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Register.fxml"));
-                    Parent root = loader.load();
-                    Scene registerScene = new Scene(root);
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.setScene(registerScene);
-                    stage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                // Switch to Register
+                switchToRegister(event);
             }
         });
     }
-    
+
+    private void switchToMainMenu(ActionEvent event, UserSession userSession) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainMenu.fxml"));
+            Parent root = loader.load();
+            Scene registerScene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(registerScene);
+            // TODO : Remove this please after creating the Show SDK
+            userSession.logoutUser();
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void switchToRegister(ActionEvent event) {
+        // switch to register view
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Register.fxml"));
+            Parent root = loader.load();
+            Scene registerScene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(registerScene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

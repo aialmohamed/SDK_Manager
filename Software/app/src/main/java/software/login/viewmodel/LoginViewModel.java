@@ -16,6 +16,7 @@ import software.utils.Sessions.UserSession;
 
 
 public class LoginViewModel {
+    
     private final StringProperty userName = new SimpleStringProperty();
     private final StringProperty userPassword = new SimpleStringProperty();
     private final ReadOnlyBooleanWrapper loginPosiable = new ReadOnlyBooleanWrapper();
@@ -24,7 +25,7 @@ public class LoginViewModel {
     private UserDao mUserDao;
     private MongoDatabase mDatabase;
     private UserSession mUserSession;
-    @Inject
+    
     public LoginViewModel(UserSession userSession) 
     {
         this.mUserSession = userSession;
@@ -71,7 +72,7 @@ public class LoginViewModel {
         }
         else
         {
-            this.mUserSession.deleteInstance();
+            this.mUserSession.logoutUser();
             System.out.println("User Not Found");
         }
     }

@@ -12,13 +12,16 @@
     - [Game Development:](#game-development)
     - [Cloud Computing and Infrastructure:](#cloud-computing-and-infrastructure)
   - [System Reqierments](#system-reqierments)
+    - [1.  User Shall be able to log in and out from the SDK Manager](#1--user-shall-be-able-to-log-in-and-out-from-the-sdk-manager)
+    - [2. The SDK shall list all the installable SDKs.](#2-the-sdk-shall-list-all-the-installable-sdks)
+  - [System Tasks](#system-tasks)
 
 
 ## Customer Requirements 
 * SDK Manager shall download a SDK from a list of SDKs
 * SDK Manager shall update already isntalled SDKs on your system
 * SDK Manager shall remove SDK from your system if wanted
-* The SDK shall list all the installed SDKs on your system.
+* The SDK shall list all the installable SDKs.
 * User Shall be able to log in and out from the SDK Manager
 
 
@@ -67,7 +70,7 @@
 
 ## System Reqierments
 
-1. User Shall be able to log in and out from the SDK Manager
+### 1.  User Shall be able to log in and out from the SDK Manager
 
 
 
@@ -82,11 +85,33 @@
 - [x] Create a Register Viewmodel
 - [x] Create a User Session 
 - [x] Create DI functionalty for the UserSession
+- [ ] Update System Design (UML) (No Prio)
+- [x] Login functionality is Done
+
+### 2. The SDK shall list all the installable SDKs.
+
+- [ ] Create a MainMenu View 
+- [ ] Create a ShowSdk View
+- [ ] Create a UserSdk Model
+- [ ] Create a new DAO for SDK
+- [ ] Create a MainMenu ViewModel
+- [ ] Create a ShowSdk ViewModel
+- [ ] TBD
+
+## System Tasks 
+
 
 | Task | Status | Note| Test| Improvements|
 |------|-----------|-----------|------| ----- |
-|Create a connection | :ballot_box_with_check:| - | :ballot_box_with_check:| |
-
-
+|Create a connection to MongoDB| :ballot_box_with_check:| - | :ballot_box_with_check:| None|
+|Create a User DAO | :ballot_box_with_check: | - | :ballot_box_with_check: | None|
+|Create a User model| :ballot_box_with_check: | - | :ballot_box_with_check: | None|
+|Create a Login View | :ballot_box_with_check: | - | :ballot_box_with_check: | None|
+|Create a Login Viewmodel| :ballot_box_with_check: | - | :ballot_box_with_check: | None|
+|Create a Register View| :ballot_box_with_check: | - | :ballot_box_with_check: | None|
+|Create a Register Viewmodel| :ballot_box_with_check: | - | :ballot_box_with_check: | None|
+|Make password like a dot| :ballot_box_with_check: | - | :ballot_box_with_check: | None|
+|Create a User Session | :ballot_box_with_check: | - | :ballot_box_with_check: | None|
+|Create DI functionalty for the UserSession| :ballot_box_with_check: | - | :ballot_box_with_check: | None|
 
 

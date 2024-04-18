@@ -9,13 +9,10 @@ class "LoginViewModel" <<ViewModel>>{
 }
 
 class UserModel <<Model>> {
-    - userId : String
     - userName : String
     - userEmail : String
     - userPassword : String
 
-    + getUserId() : String
-    + setUserID(userId:String):void
     + getUserName() :String
     + setUserName(userName:String): void
     + getuserEmail(): String
