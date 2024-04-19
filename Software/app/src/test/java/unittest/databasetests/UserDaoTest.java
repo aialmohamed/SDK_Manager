@@ -1,4 +1,4 @@
-package databasetests;
+package unittest.databasetests;
 
 
 import static org.junit.Assert.assertEquals;
