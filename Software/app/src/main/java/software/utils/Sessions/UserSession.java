@@ -41,5 +41,8 @@ public class UserSession {
     public UserModel getCurrentUser() {
         return currentUser;
     }
+    public void deleteInstance() {
+        instance = null;
+    }
 
 }

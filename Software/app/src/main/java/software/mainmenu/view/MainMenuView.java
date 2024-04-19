@@ -47,7 +47,15 @@ public class MainMenuView {
 
         UserSession userSession = UserSession.getInstance();
         String username = userSession.getCurrentUser().getUserName();
-        
+
+        ShowSDKListButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                switchToSDKList(event);
+                System.out.println(username+ " " +"Show SDK List Button Clicked");
+            }
+        });
+
         LogoutButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -57,6 +65,20 @@ public class MainMenuView {
             }
         });
     }
+    
+    void switchToSDKList(ActionEvent event) {
+        // Switch to SDK List
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ShowSdkList.fxml"));
+            Parent root = loader.load();
+            Scene registerScene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(registerScene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    } 
 
     void switchToLoginMenu(ActionEvent event) {
         // Switch to Login Menu

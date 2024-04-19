@@ -25,6 +25,10 @@ dependencies
     implementation 'org.mindrot:jbcrypt:0.4'
     // https://mvnrepository.com/artifact/com.google.inject/guice
     implementation 'com.google.inject:guice:7.0.0'
+    implementation 'com.jfoenix:jfoenix:9.0.10'
+    // https://mvnrepository.com/artifact/de.jensd/fontawesomefx
+    implementation 'de.jensd:fontawesomefx:8.9'
+
 
 
 

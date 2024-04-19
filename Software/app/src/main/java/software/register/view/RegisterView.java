@@ -2,13 +2,14 @@ package software.register.view;
 
 import java.io.IOException;
 
+import com.jfoenix.controls.JFXButton;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -25,9 +26,9 @@ public class RegisterView {
     @FXML
     private Label Status;
     @FXML
-    private Button RegisterCMDButton;
+    private JFXButton RegisterCMDButton;
     @FXML
-    private Button CancelButton;
+    private JFXButton CancelButton;
 
     @FXML
     void initialize() {

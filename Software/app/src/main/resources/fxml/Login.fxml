@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
@@ -11,14 +11,14 @@
     <AnchorPane minHeight="0.0" minWidth="350.0" prefHeight="400.0" prefWidth="100.0" style="-fx-background-color: #1c5e8d;" />
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="100.0" style="-fx-background-color: #1c5e8d;">
          <children>
-            <Button fx:id="RegisterButton" layoutX="18.0" layoutY="334.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #374f5f; -fx-background-radius: 25;" text="Register" textFill="#15252b" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="334.0" />
             <AnchorPane layoutX="18.0" layoutY="34.0" prefHeight="268.0" prefWidth="207.0" style="-fx-background-color: #374f5f; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 25;" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="34.0">
                <children>
                   <TextField fx:id="UserNameTextField" layoutX="18.0" layoutY="134.0" promptText="Username" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 25;" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="134.0" />
-                  <Button fx:id="LoginButton" layoutX="19.0" layoutY="216.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="170.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-color: #445f63; -fx-background-radius: 25;" text="Login" textFill="#15252b" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="216.0" />
                   <PasswordField fx:id="PasswordTextField" layoutX="18.0" layoutY="175.0" promptText="Password" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 25;" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="175.0" />
+                  <JFXButton fx:id="LoginButton" layoutX="13.0" layoutY="217.0" prefHeight="24.0" prefWidth="175.0" style="-fx-background-color: #445f63; -fx-background-radius: 25;" text="Login" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="217.0" />
                </children>
             </AnchorPane>
+            <JFXButton fx:id="RegisterButton" layoutX="31.0" layoutY="350.0" prefHeight="24.0" prefWidth="175.0" style="-fx-background-color: #374f5f; -fx-background-radius: 25;" text="Register" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="350.0" />
             
          </children></AnchorPane>
   </items>
