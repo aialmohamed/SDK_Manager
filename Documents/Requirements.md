@@ -23,6 +23,7 @@
 * SDK Manager shall remove SDK from your system if wanted
 * The SDK shall list all the installable SDKs.
 * User Shall be able to log in and out from the SDK Manager
+* Admin shall be able to edit the List of SDKs
 
 
 ## List of available SDKs
@@ -85,8 +86,9 @@
 - [x] Create a Register Viewmodel
 - [x] Create a User Session 
 - [x] Create DI functionalty for the UserSession
+- [ ] Auth password on login
 - [ ] Update System Design (UML) (No Prio)
-- [x] Login functionality is Done
+- [ ] Login functionality is Done
 
 ### 2. The SDK shall list all the installable SDKs.
 
