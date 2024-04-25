@@ -15,7 +15,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import software.utils.SdkListHandler.Handlers.SdkDefaultListHandler;
-import software.utils.SdkListHandler.models.SdkDefaulltListModel;
 import software.utils.SdkListHandler.models.SdkDefaultHeaderModel;
 
 
@@ -27,11 +26,10 @@ public class MainApp extends Application {
 
         
     public MainApp() {
-
         SdkDefaultListHandler sdkDefaultListHandler = new SdkDefaultListHandler();
         try {
             SdkDefaultHeaderModel myList = sdkDefaultListHandler.readDefultSdkFromYaml().get();
-            System.out.println(myList);
+            System.out.println(myList.getSdkDefaultModel().get(0).getSdkName());
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
