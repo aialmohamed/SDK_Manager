@@ -26,13 +26,6 @@ public class MainApp extends Application {
 
         
     public MainApp() {
-        SdkDefaultListHandler sdkDefaultListHandler = new SdkDefaultListHandler();
-        try {
-            SdkDefaultHeaderModel myList = sdkDefaultListHandler.readDefultSdkFromYaml().get();
-            System.out.println(myList.getSdkDefaultModel().get(0).getSdkName());
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override

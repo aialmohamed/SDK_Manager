@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -53,11 +54,12 @@
                               <Image url="@../images/Logo.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="57.0" layoutY="108.0" prefHeight="45.0" prefWidth="71.0" text="Username" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="105.0" />
+                        <Label fx:id="UsernameLable" layoutX="57.0" layoutY="108.0" prefHeight="45.0" prefWidth="71.0" text="Username" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="105.0" />
                      </children>
                   </AnchorPane>
                </children>
             </GridPane>
+            <TableView fx:id="SdkListTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </children>
